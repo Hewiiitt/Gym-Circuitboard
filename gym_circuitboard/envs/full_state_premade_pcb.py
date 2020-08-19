@@ -1,0 +1,39 @@
+import numpy as np
+
+from gym import spaces
+
+from gym_circuitboard.envs.basic_premade_pcb import PremadePCBEnv
+
+
+class FullStatePremadePCB(PremadePCBEnv):
+
+    def __init__(self, file_path, view_window=(5,5), max_steps=50):
+        super(FullStatePremadePCB, self).__init__(file_path, view_window, max_steps)
+
+    @property
+    def observation_space(self):
+        s = self.board_clone[
+            int(self.edge_padding[0]):-int(self.edge_padding[0]),
+            int(self.edge_padding[0]):-int(self.edge_padding[0])
+        ].flatten().shape[0]
+        return spaces.Box(
+            np.zeros(s) - 256,
+            np.zeros(s) + 256,
+            dtype=np.float64
+        )
+
+    def _get_obs(self):
+        return self.board_clone[
+            int(self.edge_padding[0]):-int(self.edge_padding[0]),
+            int(self.edge_padding[0]):-int(self.edge_padding[0])
+        ].flatten()
+
+
+# if __name__ == '__main__':
+#
+#     env = FullStatePremadePCB('../test_files/dummy_env.txt')
+#     images = []
+#     obs = env.reset()
+#     obs_space = env.observation_space
+#     img = env.render()
+#     images.append(img)
