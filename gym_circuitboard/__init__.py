@@ -26,7 +26,7 @@ register(
 
 register(
     id='premade-v1',
-    entry_point='gym_circuitboard.envs:PremadePCBEnvAllBoardState',
+    entry_point='gym_circuitboard.envs:FullStatePremadePCB',
     kwargs={
         'file_path': None,
         'view_window': np.array([7, 7]),
