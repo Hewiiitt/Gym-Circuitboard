@@ -10,7 +10,7 @@ class FullStatePCB(DefaultPCB):
 
     def __init__(self, columns, rows, traces, view_window=(5,5), max_steps=50):
         rng = np.random.RandomState()
-        padding = np.array([0, 0])
+        padding = np.floor(np.array(view_window)/2).astype(int)
 
         board, goal_info = generate_empty_baord(rng, rows, columns, traces, padding)
 
