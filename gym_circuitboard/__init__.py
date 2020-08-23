@@ -33,3 +33,15 @@ register(
         'max_steps': 50
     }
 )
+
+register(
+    id='auto-v1',
+    entry_point='gym_circuitboard.envs:FullStatePCB',
+    kwargs={
+        'rows': 5,
+        'columns': 5,
+        'traces': 1,
+        'view_window': np.array([7, 7]),
+        'max_steps': 50
+    }
+)
