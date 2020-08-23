@@ -20,26 +20,26 @@ class BasicPCBEnv(DefaultPCB):
 
         super(BasicPCBEnv, self).__init__(rng, board, goal_info, view_window, max_steps=max_steps)
 
-#
-# if __name__ == '__main__':
-#
-#     env = BasicPCBEnv(6, 6, 1, (7,7))
-#     images = []
-#     obs = env.reset()
-#     img = env.render()
-#     images.append(img)
-#     # obs, rwd, done, _ = env.step(0)
-#     for i in range(1000):
-#         plt.figure()
-#         plt.imshow(obs[:-2].reshape(7,7))
-#         plt.show()
-#         action = int(input('0 3 5\n1   6\n2 4 7\n'))
-#         obs, rwd, done, _ = env.step(action)
-#         img = env.render(mode='rgb_array')
-#         images.append(img)
-#         print(rwd)
-#         if done:
-#             break
-#
-#
-#     print('hi')
+
+if __name__ == '__main__':
+
+    env = BasicPCBEnv(6, 6, 1, (7,7))
+    images = []
+    obs = env.reset()
+    img = env.render()
+    images.append(img)
+    # obs, rwd, done, _ = env.step(0)
+    for i in range(1000):
+        plt.figure()
+        plt.imshow(obs[:-2].reshape(7,7))
+        plt.show()
+        action = int(input('0 3 5\n1   6\n2 4 7\n'))
+        obs, rwd, done, _ = env.step(action)
+        img = env.render(mode='rgb_array')
+        images.append(img)
+        print(rwd)
+        if done:
+            break
+
+
+    print('hi')

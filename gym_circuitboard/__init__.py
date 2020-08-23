@@ -15,6 +15,18 @@ register(
 )
 
 register(
+    id='auto-v2',
+    entry_point='gym_circuitboard.envs:BasicResetPCBEnv',
+    kwargs={
+        'rows': 5,
+        'columns': 5,
+        'traces': 1,
+        'view_window': np.array([7, 7]),
+        'max_steps': 50
+    }
+)
+
+register(
     id='premade-v0',
     entry_point='gym_circuitboard.envs:PremadePCBEnv',
     kwargs={
