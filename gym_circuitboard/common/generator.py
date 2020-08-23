@@ -4,7 +4,7 @@ import copy
 
 import numpy as np
 
-from noise import snoise2
+from noise import snoise2, pnoise3
 
 FAIL_OUT_COUNT = 20
 
@@ -206,7 +206,7 @@ def generate_noise(width, height, freq=3, octave=1, threshold=0.5):
 
     for y in range(height*3):
         for x in range(width*3):
-            z = snoise2(x / freq, y / freq, octave)
+            z = snoise2(x+np.random.randint(0, 10000000) / freq, y+np.random.randint(0, 10000000) / freq, octave)
             arr[x, y] = z > threshold
 
     return arr[width:width*2, height:height*2]

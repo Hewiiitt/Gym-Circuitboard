@@ -20,10 +20,10 @@ class BasicPCBEnv(DefaultPCB):
 
         super(BasicPCBEnv, self).__init__(rng, board, goal_info, view_window, max_steps=max_steps)
 
-
+#
 # if __name__ == '__main__':
 #
-#     env = BasicPCBEnv(7, 7, 2, (7,7))
+#     env = BasicPCBEnv(6, 6, 1, (7,7))
 #     images = []
 #     obs = env.reset()
 #     img = env.render()
@@ -40,8 +40,6 @@ class BasicPCBEnv(DefaultPCB):
 #         print(rwd)
 #         if done:
 #             break
-#
-#     imageio.mimsave('output.gif', [np.array(img) for i, img in enumerate(images)], fps=29)
 #
 #
 #     print('hi')
