@@ -12,13 +12,9 @@ class SensorStatePremadePCB(PremadePCBEnv):
 
     @property
     def observation_space(self):
-        s = self.board_clone[
-            int(self.edge_padding[0]):-int(self.edge_padding[0]),
-            int(self.edge_padding[0]):-int(self.edge_padding[0])
-        ].flatten().shape[0]
         return spaces.Box(
-            np.zeros(s) - 256,
-            np.zeros(s) + 256,
+            np.zeros(10) - 256,
+            np.zeros(10) + 256,
             dtype=np.float64
         )
 
