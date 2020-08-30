@@ -57,3 +57,25 @@ register(
         'max_steps': 50
     }
 )
+
+register(
+    id='auto-v2',
+    entry_point='gym_circuitboard.envs:SensorStatePCB',
+    kwargs={
+        'rows': 5,
+        'columns': 5,
+        'traces': 1,
+        'view_window': np.array([7, 7]),
+        'max_steps': 50
+    }
+)
+
+register(
+    id='premade-v2',
+    entry_point='gym_circuitboard.envs:SensorStatePremadePCB',
+    kwargs={
+        'file_path': None,
+        'view_window': np.array([7, 7]),
+        'max_steps': 50
+    }
+)

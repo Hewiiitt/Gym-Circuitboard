@@ -9,6 +9,7 @@ from .util import Colors
 class DiscretePCBBaseEnv(gym.Env):
 
     def __init__(self, rng, board, goal_info, max_steps=50):
+
         self.rng = rng
         self.base_board = board
         self.board_clone = copy.deepcopy(self.base_board)

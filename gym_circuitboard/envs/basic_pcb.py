@@ -23,7 +23,7 @@ class BasicPCBEnv(DefaultPCB):
 
 if __name__ == '__main__':
 
-    env = BasicPCBEnv(6, 6, 1, (7,7))
+    env = BasicPCBEnv(9, 9, 3, (7,7))
     images = []
     obs = env.reset()
     img = env.render()
