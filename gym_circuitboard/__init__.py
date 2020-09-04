@@ -79,3 +79,47 @@ register(
         'max_steps': 50
     }
 )
+
+register(
+    id='auto-v3',
+    entry_point='gym_circuitboard.envs:IncentivisedDiagonal',
+    kwargs={
+        'rows': 5,
+        'columns': 5,
+        'traces': 1,
+        'view_window': np.array([7, 7]),
+        'max_steps': 50
+    }
+)
+
+register(
+    id='premade-v3',
+    entry_point='gym_circuitboard.envs:IncentivisedDiagonalPremade',
+    kwargs={
+        'file_path': None,
+        'view_window': np.array([7, 7]),
+        'max_steps': 50
+    }
+)
+
+register(
+    id='auto-v4',
+    entry_point='gym_circuitboard.envs:ShapedReward',
+    kwargs={
+        'rows': 5,
+        'columns': 5,
+        'traces': 1,
+        'view_window': np.array([7, 7]),
+        'max_steps': 50
+    }
+)
+
+register(
+    id='premade-v4',
+    entry_point='gym_circuitboard.envs:ShapedRewardPremade',
+    kwargs={
+        'file_path': None,
+        'view_window': np.array([7, 7]),
+        'max_steps': 50
+    }
+)
