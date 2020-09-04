@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 from gym import spaces
 
 from gym_circuitboard.common import generate_empty_baord
-from gym_circuitboard.envs.sensor_state_pcb import SensorStatePCB
+from gym_circuitboard.envs.sensor_state_premade_pcb import SensorStatePremadePCB
 # from gym_circuitboard.envs.basic_pcb import BasicPCBEnv
 
 
-class ShapedRewardPremade(SensorStatePCB):
+class ShapedRewardPremade(SensorStatePremadePCB):
 
     def __init__(self, file_path, view_window=(5,5), max_steps=50):
-        super(SensorStatePCB, self).__init__(file_path, view_window=view_window, max_steps=max_steps)
+        super(ShapedRewardPremade, self).__init__(file_path, view_window=view_window, max_steps=max_steps)
 
     def euclideon_dist(self, vect):
         return np.sqrt(vect[0]**2 + vect[1]**2)
