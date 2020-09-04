@@ -22,7 +22,6 @@ class ShapedRewardPremade(SensorStatePremadePCB):
         end_dist = self.euclideon_dist(step_info['final_pos'] - self.traces[self.current_trace].get_end())
 
         reward = (-np.sqrt(2) + (start_dist - end_dist)) / (2*np.sqrt(2))
-        print(reward)
         reward += 5 if step_info['goal_reached'] else 0
         reward += 10 if step_info['done'] and step_info['goal_reached'] else 0
         return reward

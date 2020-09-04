@@ -9,10 +9,10 @@ from gym_circuitboard.envs.sensor_state_premade_pcb import SensorStatePremadePCB
 # from gym_circuitboard.envs.basic_pcb import BasicPCBEnv
 
 
-class IncentivisedDiagonal(SensorStatePremadePCB):
+class IncentivisedDiagonalPremade(SensorStatePremadePCB):
 
     def __init__(self, file_path, view_window=(5,5), max_steps=50):
-        super(IncentivisedDiagonal, self).__init__(file_path, view_window=view_window, max_steps=max_steps)
+        super(IncentivisedDiagonalPremade, self).__init__(file_path, view_window=view_window, max_steps=max_steps)
 
     def _get_reward(self, step_info):
 
